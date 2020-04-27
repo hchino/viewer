@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="resource/css/message_style.css">  
+    <link rel="stylesheet" type="text/css" href="resource/css/video_style.css">
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+
+    <link href="./resource/js/video-js-7.7.5/video-js.min.css" rel="stylesheet">
+    <script src="./resource/js/video-js-7.7.5/video.js"></script>
+    <script src="./resource/js/videojs-contrib-hls.min.js"></script>
+    <script src="./resource/js/videojs-contrib-media-sources.js"></script>
+
+  </head>
+  <body>
+    <div>
+      <!--column内はgrid layoutを適応させる範囲-->
+      <div class = "column">
+        <div>
+          <!--初期のビデオ videoクラスのサイズはcolumnで指定されたサイズになる-->
+          <div class="field_object" id="camera_0" style="color:green;">
+            緑
+            <!--videoクラスのサイズだとcolumnサイズに合わせた時の余りが出るのでビデオだけの表示範囲がvideo-frame-->
+            <div class="video-frame">
+              <!-- <video controls id="video0" class="chvid" src="./resource/movie/20180219/green/stream/green.m3u8" onclick="play_movie(this.id)"></video> -->
+              <video id="video0" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20180219/green/stream/green.m3u8" type="application/x-mpegURL">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!--以下6個のビデオの初期設置-->
+
+        <div>
+          <div class="field_object" id="camera_1" style="color:#FFCC00;">
+            黄
+            <div class="video-frame">
+              <!-- <video controls id="video5" class="chvid" src="./resource/movie/20180219/yellow/stream/yellow.m3u8" onclick="play_movie(this.id)"></video> -->
+              <video id="video1" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20180219/yellow/stream/yellow.m3u8" type="application/x-mpegURL">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="field_object" id="camera_2" style="color:red;">
+            赤
+            <div class="video-frame">
+              <!-- <video controls id="video3" class="chvid" src="./resource/movie/20180219/red/stream/red.m3u8" onclick="play_movie(this.id)"></video> -->
+              <video id="video2" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20180219/red/stream/red.m3u8" type="application/x-mpegURL">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="field_object" id="camera_3" style="color:#ffa07a;">
+            1トリ
+            <div class="video-frame">
+              <!-- <video controls id="video2" class="chvid" src="./resource/movie/20180219/pt/stream/pt.m3u8" onclick="play_movie(this.id)"></video> -->
+              <video id="video3" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20180219/pt/stream/pt.m3u8" type="application/x-mpegURL">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="field_object" id="camera_4" style="color:#00CC00;">
+            トリ本
+            <div class="video-frame">
+              <!-- <video controls id="video4" class="chvid" src="./resource/movie/20180219/thq/stream/thq.m3u8" onclick="play_movie(this.id)"></video> -->
+              <video id="video4" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20180219/thq/stream/thq.m3u8" type="application/x-mpegURL">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="field_object" id="camera_5" style="color:blue;">
+            災本
+            <div class="video-frame">
+              <!-- <video controls id="video1" class="chvid" src="./resource/movie/20180219/hq/stream/hq.m3u8" onclick="play_movie(this.id)"></video> -->
+              <video id="video5" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20180219/hq/stream/hq.m3u8" type="application/x-mpegURL">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!--でかいビデオの初期配置-->
+    <div>
+      <div class="field_object" id="camera_6">
+        <div class="main-video-frame">
+              <!-- <video controls id="video6" class="main_chvid" src="./resource/movie/20180219/green/stream/green.m3u8" onclick="play_movie(this.id)"></video> -->
+              <video id="video6" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20180219/green/stream/green.m3u8" type="application/x-mpegURL">
+              </video>
+        </div>
+      </div>
+      <div class="field_object">
+            <p>
+              <input style="width: 544px; height: 20px;" type="range" class="range" value="0.0" id="range" min="0.0" max="6066.0" step="1.0">
+            </p>
+            <p>再生時間：<span id="value">0:00:00</span></p>
+          </div>
+          <div class="field_object">
+            <button class="panel" id="start" type="button" name="name" value="value" onclick="video_controll('play',false)">再生</button>
+            <button class="panel" id="stop" type="button" name="name" value="value" onclick="video_controll('pause',false)">停止</button>
+            <button class="panel" id="comment" type="button" name="name" value="value" onclick="comment_scroll()">コメント同期</button>
+
+
+            <form id="tag_dialog" title="Tag作成" style="display:none">
+              <p>Tag:<br><input type="text" id="tag_name" name="tag_name"><br>
+              <p>内容:<br><input type="text" id="contents" name="contents"><br><br>
+              <input type="reset" id="ok_button" value="OK"></p>
+            </form>
+          </div>
+        </div>
+        <div></div>
+        <div>
+          <div class="field_object" id="tag-box">
+            <button class="panel" id="createTag" type="button" name="name" value="value">タグ作成</button>
+            <button class="panel" id="deleteTag" type="button" name="name" value="value">削除</button>
+            <div style="height:100%; height:-30px; width:100%; overflow:scroll; position: absolute">
+              <table id="tag_table" border="1" width="100%" height="276">
+                <tr>
+                  <td width="60px">Time</td>
+                  <td width="100px">Tag</td>
+                  <td>Contents</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>  
+        <p id = "infobox" class = "field_object">
+        </p>
+      </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script src="resource/js/jQuery-tinyDraggable-master/jquery.tiny-draggable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>
+    <script src="resource/js/kyoto.js" type="text/javascript"></script>
+  </body>
+</html>

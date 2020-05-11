@@ -22,7 +22,9 @@
             緑
             <!--videoクラスのサイズだとcolumnサイズに合わせた時の余りが出るのでビデオだけの表示範囲がvideo-frame-->
             <div class="video-frame">
-              <video controls id="video0" class="chvid" src="./resource/movie/20191116/green/stream/green.m3u8" onclick="play_movie(this.id)"></video>
+              <video id="video0" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20191116/green/stream/green.m3u8" type="application/x-mpegURL">
+              <!-- <video controls id="video0" class="chvid" src="./resource/movie/20191116/green/stream/green.m3u8" onclick="play_movie(this.id)"></video> -->
             </div>
           </div>
         </div>
@@ -33,7 +35,9 @@
           <div class="field_object" id="camera_1" style="color:#FFCC00;">
             黄
             <div class="video-frame">
-              <video controls id="video5" class="chvid" src="./resource/movie/20191116/yellow/stream/yellow.m3u8" onclick="play_movie(this.id)"></video>
+              <video id="video1" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20191116/yellow/stream/yellow.m3u8" type="application/x-mpegURL">
+              <!-- <video controls id="video5" class="chvid" src="./resource/movie/20191116/yellow/stream/yellow.m3u8" onclick="play_movie(this.id)"></video> -->
             </div>
           </div>
         </div>
@@ -42,7 +46,9 @@
           <div class="field_object" id="camera_2" style="color:red;">
             赤
             <div class="video-frame">
-              <video controls id="video3" class="chvid" src="./resource/movie/20191116/red/stream/red.m3u8" onclick="play_movie(this.id)"></video>
+              <video id="video2" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20191116/red/stream/red.m3u8" type="application/x-mpegURL">
+              <!-- <video controls id="video3" class="chvid" src="./resource/movie/20191116/red/stream/red.m3u8" onclick="play_movie(this.id)"></video> -->
             </div>
           </div>
         </div>
@@ -51,7 +57,9 @@
           <div class="field_object" id="camera_3" style="color:#ffa07a;">
             1トリ
             <div class="video-frame">
-              <video controls id="video2" class="chvid" src="./resource/movie/20191116/pt/stream/pt.m3u8" onclick="play_movie(this.id)"></video>
+              <video id="video3" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20191116/pt/stream/pt.m3u8" type="application/x-mpegURL">
+              <!-- <video controls id="video2" class="chvid" src="./resource/movie/20191116/pt/stream/pt.m3u8" onclick="play_movie(this.id)"></video> -->
             </div>
           </div>
         </div>
@@ -60,7 +68,9 @@
           <div class="field_object" id="camera_4" style="color:#00CC00;">
             トリ本
             <div class="video-frame">
-              <video controls id="video4" class="chvid" src="./resource/movie/20191116/thq/stream/thq.m3u8" onclick="play_movie(this.id)"></video>
+              <video id="video4" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20191116/thq/stream/thq.m3u8" type="application/x-mpegURL">
+              <!-- <video controls id="video4" class="chvid" src="./resource/movie/20191116/thq/stream/thq.m3u8" onclick="play_movie(this.id)"></video> -->
             </div>
           </div>
         </div>
@@ -69,7 +79,9 @@
           <div class="field_object" id="camera_5" style="color:blue;">
             災本
             <div class="video-frame">
-              <video controls id="video1" class="chvid" src="./resource/movie/20191116/hq/stream/hq.m3u8" onclick="play_movie(this.id)"></video>
+              <video id="video5" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+                <source src="./resource/movie/20191116/hq/stream/hq.m3u8" type="application/x-mpegURL">
+              <!-- <video controls id="video1" class="chvid" src="./resource/movie/20191116/hq/stream/hq.m3u8" onclick="play_movie(this.id)"></video> -->
             </div>
           </div>
         </div>
@@ -78,7 +90,9 @@
     <div>
       <div class="field_object" id="camera_6">
         <div class="main-video-frame">
-              <video controls id="video6" class="main_chvid" src="./resource/movie/20191116/green/stream/green.m3u8" onclick="play_movie(this.id)"></video>
+          <video id="video6" class="video-js vjs-default-skin vjs-big-play-centered chvid" data-setup="{}" onclick="play_movie(this.id)">
+            <source src="./resource/movie/20191116/green/stream/green.m3u8" type="application/x-mpegURL">
+              <!-- <video controls id="video6" class="main_chvid" src="./resource/movie/20191116/green/stream/green.m3u8" onclick="play_movie(this.id)"></video> -->
         </div>
       </div>
       <div class="field_object">

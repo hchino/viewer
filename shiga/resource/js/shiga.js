@@ -34,11 +34,10 @@ $(function() {
 	    	}
 			for (var i=0; i<7; i++) {
 				var video_id = "video" + i;
-				video[i] = document.getElementById(video_id);
+				video[i] = videojs(video_id);
 				if (i != video.length - 1) {
 					video[i].volume = 0;
 				}
-				video[i].controls = false;
 			}
 
 	    	$('#infobox').append(insert_contents);
@@ -139,22 +138,19 @@ function sort_active_video(object_name) {
 }
 
 function play_movie(id) {
-  console.log(id);
-  console.log(video[6].src);
-  console.log(video[6].currentSrc);
-  current = video[6].currentTime;
-  if (id == "video6") {
+  current = video[6].currentTime();
+  if (id.match(/html5_api/)){
     //console.log("特に何もないよ！！");
   } else {
-    // video[6].src = document.getElementById(id).currentSrc;
-    video[6].src({ type: 'video/mp4', src: document.getElementById(id).currentSrc })
+  	video_id = id.replace(/video/g, '');
+    video[6].src(video[video_id].src());
     for (var i = 0;i < video.length; i++) {
-      video[i].currentTime = current;
+      video[i].currentTime(current);
       video[i].pause();
     }
     // clear_Interval();
     setTimeout(() => {
-      video[6].currentTime = current;
+      video[6].currentTime(current);
       video[6].pause();
     }, 100);
   }
@@ -186,7 +182,8 @@ function video_controll(command, now) {
 		document.getElementById("range").value = now;
 	}
 	for (var i=0; i<video.length; i++) {
-		video[i].currentTime = now;
+		video[i].currentTime(now)
+		;
 		switch (command) {
 			case 'play':
 				video[i].play();
@@ -231,7 +228,7 @@ function timer_count(now_time) {
 }
 
 function scroll() {
-	var timer = parseInt((video[video.length - 1]).currentTime);
+	var timer = parseInt((video[video.length - 1]).currentTime());
 	var speed = 400;
 	var message_id = "message" + timer;
 	var hms = timer_count(timer);
@@ -245,16 +242,16 @@ function scroll() {
 	}
 	var from = checkcolor(talk_info[i-1][1]);
 	var to = checkcolor(talk_info[i-1][2]);
-	for (var i=0; i<video.length - 1; i++) {
-		var position_name = "camera_" + i;
-		if(document.getElementById(position_name).style.color == from) {
-		    video[i].style.border = "5px solid black";
-		} else if (document.getElementById(position_name).style.color == to) {
-		    video[i].style.border = "5px solid black";
-		} else {
-		    video[i].style.border = "1px solid black";
-		}
-	}
+	// for (var i=0; i<video.length - 1; i++) {
+	// 	var position_name = "camera_" + i;
+	// 	if(document.getElementById(position_name).style.color == from) {
+	// 	    video[i].style.border = "5px solid black";
+	// 	} else if (document.getElementById(position_name).style.color == to) {
+	// 	    video[i].style.border = "5px solid black";
+	// 	} else {
+	// 	    video[i].style.border = "1px solid black";
+	// 	}
+	// }
 
 	for (var i=0; i<message_timer; i++) {
 		var message_id = "message" + message_timer[i];
@@ -360,7 +357,7 @@ function timeline_script(bar_status, color_status) {
 
 var switch_messageColor = function(){
 	// console.log('aaaaa');
-	var now = video[6].currentTime;
+	var now = video[6].currentTime();
 	for (var i = 0;i<message_timer.length; i++){
     	var href = "message" + message_timer[i];
     	if (message_timer[i] < now && message_timer[i+1] > now){
@@ -402,7 +399,7 @@ function format_text(change_text){
 
 function change_movie_time_tag(time_id){
   for (var i = 0;i < video.length; i++) {
-    video[i].currentTime = time_id;
+    video[i].currentTime(time_id);
     video[i].pause();
   }
 }

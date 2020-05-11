@@ -33,18 +33,12 @@ $(function() {
 		        }
 	    	}
 			for (var i=0; i<7; i++) {
-				//var video_id = "video" + i + "_html5_api";
 				var video_id = "video" + i;
-				//video[i] = document.getElementById(video_id);
 				video[i] = videojs(video_id);
 				if (i != video.length - 1) {
 					video[i].volume = 0;
 				}
-				// video[i].controls = false;
 			}
-
-			console.log(video[0]);
-			console.log(video[1])
 
 	    	$('#infobox').append(insert_contents);
 	    	for (var i=0; i<talk_counter; i++) {
@@ -144,15 +138,7 @@ function sort_active_video(object_name) {
 }
 
 function play_movie(id) {
-  //console.log("aiueo");
-  // video_id = id.replace(/video/g, '');
-  // console.log(id);
-  // console.log(video_id)
-  // console.log(video[6].src());
-  // console.log(document.getElementById(id));
-  // console.log(video[video_id].src());
   current = video[6].currentTime();
-  // if (id == "video6_html5_api") {
   if (id.match(/html5_api/)){
     //console.log("特に何もないよ！！");
   } else {
